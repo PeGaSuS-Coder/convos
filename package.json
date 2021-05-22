@@ -5,10 +5,10 @@
   "license": "Artistic-2.0",
   "repository": "https://github.com/convos-chat/convos",
   "scripts": {
-    "build": "rollup -c --environment production",
+    "build": "ROLLUP_OUT_DIR=public/asset rollup -c --environment production",
     "dev": "./script/convos dev",
     "generate-docs": "node_modules/.bin/jsdoc --configure .jsdoc.json --verbose",
-    "lint": "ROLLUP_WATCH=yes rollup -c",
+    "lint": "ROLLUP_OUT_DIR=public/asset ROLLUP_WATCH=yes rollup -c",
     "test": "jest"
   },
   "browserslist": [

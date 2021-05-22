@@ -86,7 +86,8 @@ sub startup {
   $ENV{MOJO_WEBPACK_CONFIG} = 'rollup.config.js';
   $self->plugin(
     Webpack => {
-      process      => ['svelte'],
+      engine       => 'Mojo::Alien::rollup',
+      process      => [qw(core svelte js css)],
       dependencies => {core => 'rollup', svelte => [qw(rollup-plugin-svelte svelte)]}
     }
   );
